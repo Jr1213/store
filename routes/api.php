@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\auth\ProfileController;
 use App\Http\Controllers\auth\UserController;
+use App\Http\Controllers\Products\CategoriesController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
@@ -20,4 +21,5 @@ Route::post('join', [UserController::class, 'join']);
 Route::post('login', [UserController::class, 'login']);
 Route::middleware('auth:sanctum')->group(function () {
     Route::apiResource('profile', ProfileController::class);
+    Route::apiResource('categories', CategoriesController::class);
 });
